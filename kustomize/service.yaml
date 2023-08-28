@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: note-service
+  labels:
+    app: note
+spec:
+  selector:
+    app: note
+  ports:
+    - name: http 
+      port: 80 # service port / incoming port
+      targetPort: 8080 # container port inside the pod
+      protocol: TCP
+  type: ClusterIP
